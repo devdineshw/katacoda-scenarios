@@ -8,6 +8,10 @@
       {
         "title": "Creating the environment",
         "text": "step1.md"
+      },
+      {
+        "title": "Checking the environment",
+        "text": "step2.md"
       }
     ],
     "finish": {

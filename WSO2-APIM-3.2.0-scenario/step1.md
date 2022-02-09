@@ -17,6 +17,7 @@
 
 Once "Processing WSO2 API Manager" appears, distrupt the Progress bar by pressing the Ctrl+C
 
-4) Find the running pods
+4) Change the namespace for the current session
 
-`kubectl get pods -n wso2`{{execute}}
+`kubectl config set-context --current --namespace=ggckad-s2`{{execute}}
+
