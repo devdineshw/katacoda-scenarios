@@ -1,1 +1,1 @@
-kubectl config set-context .kube/kubeconfig
+kubectl config set-context /root/.kube/kubeconfig.yml
