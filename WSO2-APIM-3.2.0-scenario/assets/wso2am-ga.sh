@@ -3032,97 +3032,97 @@ spec:
       protocol: TCP
       targetPort: 30646
       nodePort: 30646
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: wso2am-pattern-1-analytics-dashboard-deployment
-  namespace: wso2
-spec:
-  replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
-  selector:
-    matchLabels:
-      deployment: wso2am-pattern-1-analytics-dashboard
-      product: api-manager
-  template:
-    metadata:
-      labels:
-        deployment: wso2am-pattern-1-analytics-dashboard
-        product: api-manager
-    spec:
-      initContainers:
-        - name: init-apim-analytics-db
-          image: busybox:1.31
-          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z wso2apim-rdbms-service-mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL Server has started";']
-        - name: init-download-mysql-connector
-          image: busybox:1.31
-          command:
-            - /bin/sh
-            - "-c"
-            - |
-              set -e
-              wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar -P /mysql-connector-jar/
-          volumeMounts:
-            - name: mysql-connector-jar
-              mountPath: /mysql-connector-jar
-      containers:
-        - name: wso2am-pattern-1-analytics-dashboard
-          image: "$image.pull.@.wso2"/wso2am-analytics-dashboard:3.2.0
-          livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 30646
-            initialDelaySeconds: 20
-            periodSeconds: 10
-          readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 30646
-            initialDelaySeconds: 20
-            periodSeconds: 10
-          lifecycle:
-            preStop:
-              exec:
-                command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/dashboard.sh stop']
-          resources:
-            requests:
-              memory: 1Gi
-              cpu: 1000m
-            limits:
-              memory: 1Gi
-              cpu: 1000m
-          imagePullPolicy: Always
-          securityContext:
-            runAsUser: 802
-          ports:
-            -
-              containerPort: 30646
-              protocol: "TCP"
-          volumeMounts:
-            - name: wso2am-pattern-1-am-analytics-dashboard-conf
-              mountPath: /home/wso2carbon/wso2-config-volume/conf/dashboard/deployment.yaml
-              subPath: deployment.yaml
-            - name: mysql-connector-jar
-              mountPath: /home/wso2carbon/wso2-artifact-volume/lib
-      serviceAccountName: wso2am-pattern-1-svc-account
-      imagePullSecrets:
-        - name: wso2am-pattern-1-creds
-      volumes:
-        - name: wso2am-pattern-1-am-analytics-dashboard-conf
-          configMap:
-            name: wso2am-pattern-1-am-analytics-dashboard-conf
-        - name: mysql-connector-jar
-          emptyDir: {}
+#---
+#
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: wso2am-pattern-1-analytics-dashboard-deployment
+#  namespace: wso2
+#spec:
+#  replicas: 1
+#  strategy:
+#    rollingUpdate:
+#      maxSurge: 1
+#      maxUnavailable: 0
+#    type: RollingUpdate
+#  selector:
+#   matchLabels:
+#      deployment: wso2am-pattern-1-analytics-dashboard
+#      product: api-manager
+#  template:
+#    metadata:
+#      labels:
+#        deployment: wso2am-pattern-1-analytics-dashboard
+#        product: api-manager
+#    spec:
+#      initContainers:
+#        - name: init-apim-analytics-db
+#          image: busybox:1.31
+#          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z wso2apim-rdbms-service-mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL Server has started";']
+#        - name: init-download-mysql-connector
+#          image: busybox:1.31
+#          command:
+#            - /bin/sh
+#           - "-c"
+#            - |
+#              set -e
+#              wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar -P /mysql-connector-jar/
+#          volumeMounts:
+#            - name: mysql-connector-jar
+#              mountPath: /mysql-connector-jar
+#      containers:
+#        - name: wso2am-pattern-1-analytics-dashboard
+#          image: "$image.pull.@.wso2"/wso2am-analytics-dashboard:3.2.0
+#          livenessProbe:
+#            exec:
+#              command:
+#                - /bin/sh
+#                - -c
+#                - nc -z localhost 30646
+#            initialDelaySeconds: 20
+#            periodSeconds: 10
+#          readinessProbe:
+#            exec:
+#              command:
+#                - /bin/sh
+#                - -c
+#                - nc -z localhost 30646
+#            initialDelaySeconds: 20
+#            periodSeconds: 10
+#          lifecycle:
+#            preStop:
+#              exec:
+#                command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/dashboard.sh stop']
+#          resources:
+#            requests:
+#              memory: 1Gi
+#              cpu: 1000m
+#            limits:
+#              memory: 1Gi
+#              cpu: 1000m
+#          imagePullPolicy: Always
+#          securityContext:
+#            runAsUser: 802
+#          ports:
+#            -
+#              containerPort: 30646
+#              protocol: "TCP"
+#          volumeMounts:
+#            - name: wso2am-pattern-1-am-analytics-dashboard-conf
+#              mountPath: /home/wso2carbon/wso2-config-volume/conf/dashboard/deployment.yaml
+#              subPath: deployment.yaml
+#            - name: mysql-connector-jar
+#              mountPath: /home/wso2carbon/wso2-artifact-volume/lib
+#      serviceAccountName: wso2am-pattern-1-svc-account
+#      imagePullSecrets:
+#        - name: wso2am-pattern-1-creds
+#      volumes:
+#        - name: wso2am-pattern-1-am-analytics-dashboard-conf
+#          configMap:
+#            name: wso2am-pattern-1-am-analytics-dashboard-conf
+#        - name: mysql-connector-jar
+#          emptyDir: {}
 ---
 
 apiVersion: v1
@@ -3704,115 +3704,115 @@ spec:
       name: 'rest-api-port-4'
       protocol: TCP
       port: 7444
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: wso2am-pattern-1-analytics-worker-deployment
-  namespace: wso2
-spec:
-  replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
-  selector:
-    matchLabels:
-      deployment: wso2am-pattern-1-analytics-worker
-      product: api-manager
-  template:
-    metadata:
-      labels:
-        deployment: wso2am-pattern-1-analytics-worker
-        product: api-manager
-    spec:
-      initContainers:
-        - name: init-apim-analytics-db
-          image: busybox:1.31
-          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z wso2apim-rdbms-service-mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL Server has started";']
-        - name: init-download-mysql-connector
-          image: busybox:1.31
-          command:
-            - /bin/sh
-            - "-c"
-            - |
-              set -e
-              wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar -P /mysql-connector-jar/
-          volumeMounts:
-            - name: mysql-connector-jar
-              mountPath: /mysql-connector-jar
-      containers:
-        - name: wso2am-pattern-1-analytics-worker
-          image: "$image.pull.@.wso2"/wso2am-analytics-worker:3.2.0
-          livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 7444
-            initialDelaySeconds: 100
-            periodSeconds: 10
-          readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 7444
-            initialDelaySeconds: 100
-            periodSeconds: 10
-          lifecycle:
-            preStop:
-              exec:
-                command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/worker.sh stop']
-          resources:
-            requests:
-              memory: 500Mi
-              cpu: 500m
-            limits:
-              memory: 1Gi
-              cpu: 1000m
-          imagePullPolicy: Always
-          securityContext:
-            runAsUser: 802
-          ports:
-            -
-              containerPort: 9764
-              protocol: "TCP"
-            -
-              containerPort: 9444
-              protocol: "TCP"
-            -
-              containerPort: 7612
-              protocol: "TCP"
-            -
-              containerPort: 7712
-              protocol: "TCP"
-            -
-              containerPort: 9091
-              protocol: "TCP"
-            -
-              containerPort: 7071
-              protocol: "TCP"
-            -
-              containerPort: 7444
-              protocol: "TCP"
-          volumeMounts:
-            - name: wso2am-pattern-1-am-analytics-worker-conf
-              mountPath: /home/wso2carbon/wso2-config-volume/conf/worker/deployment.yaml
-              subPath: deployment.yaml
-            - name: mysql-connector-jar
-              mountPath: /home/wso2carbon/wso2-artifact-volume/lib
-      serviceAccountName: wso2am-pattern-1-svc-account
-      imagePullSecrets:
-        - name: wso2am-pattern-1-creds
-      volumes:
-        - name: wso2am-pattern-1-am-analytics-worker-conf
-          configMap:
-            name: wso2am-pattern-1-am-analytics-worker-conf
-        - name: mysql-connector-jar
-          emptyDir: {}
+#---
+#
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: wso2am-pattern-1-analytics-worker-deployment
+#  namespace: wso2
+#spec:
+#  replicas: 1
+#  strategy:
+#    rollingUpdate:
+#      maxSurge: 1
+#      maxUnavailable: 0
+#    type: RollingUpdate
+#  selector:
+#    matchLabels:
+#      deployment: wso2am-pattern-1-analytics-worker
+#      product: api-manager
+#  template:
+#    metadata:
+#      labels:
+#        deployment: wso2am-pattern-1-analytics-worker
+#        product: api-manager
+#    spec:
+#      initContainers:
+#        - name: init-apim-analytics-db
+#          image: busybox:1.31
+#          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z wso2apim-rdbms-service-mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL Server has started";']
+#        - name: init-download-mysql-connector
+#          image: busybox:1.31
+#          command:
+#            - /bin/sh
+#            - "-c"
+#            - |
+#              set -e
+#              wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar -P /mysql-connector-jar/
+#          volumeMounts:
+#            - name: mysql-connector-jar
+#              mountPath: /mysql-connector-jar
+#      containers:
+#        - name: wso2am-pattern-1-analytics-worker
+#          image: "$image.pull.@.wso2"/wso2am-analytics-worker:3.2.0
+#          livenessProbe:
+#            exec:
+#              command:
+#                - /bin/sh
+#                - -c
+#                - nc -z localhost 7444
+#            initialDelaySeconds: 100
+#            periodSeconds: 10
+#          readinessProbe:
+#            exec:
+#              command:
+#                - /bin/sh
+#                - -c
+#                - nc -z localhost 7444
+#            initialDelaySeconds: 100
+#            periodSeconds: 10
+#          lifecycle:
+#            preStop:
+#              exec:
+#                command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/worker.sh stop']
+#          resources:
+#            requests:
+#              memory: 500Mi
+#              cpu: 500m
+#            limits:
+#              memory: 1Gi
+#              cpu: 1000m
+#          imagePullPolicy: Always
+#          securityContext:
+#            runAsUser: 802
+#          ports:
+#            -
+#              containerPort: 9764
+#              protocol: "TCP"
+#            -
+#              containerPort: 9444
+#              protocol: "TCP"
+#            -
+#              containerPort: 7612
+#              protocol: "TCP"
+#            -
+#              containerPort: 7712
+#              protocol: "TCP"
+#            -
+#              containerPort: 9091
+#              protocol: "TCP"
+#            -
+#              containerPort: 7071
+#              protocol: "TCP"
+#            -
+#              containerPort: 7444
+#              protocol: "TCP"
+#          volumeMounts:
+#            - name: wso2am-pattern-1-am-analytics-worker-conf
+#              mountPath: /home/wso2carbon/wso2-config-volume/conf/worker/deployment.yaml
+#              subPath: deployment.yaml
+#            - name: mysql-connector-jar
+#              mountPath: /home/wso2carbon/wso2-artifact-volume/lib
+#      serviceAccountName: wso2am-pattern-1-svc-account
+#      imagePullSecrets:
+#        - name: wso2am-pattern-1-creds
+#      volumes:
+#        - name: wso2am-pattern-1-am-analytics-worker-conf
+#          configMap:
+#            name: wso2am-pattern-1-am-analytics-worker-conf
+#        - name: mysql-connector-jar
+#          emptyDir: {}
 ---
 
 apiVersion: v1
@@ -3918,7 +3918,7 @@ data:
     #expiry_time = "2m"
 
     [apim.analytics]
-    enable = true
+    enable = false
     store_api_url = "https://wso2am-pattern-1-analytics-worker-service:7444"
     #username = "$ref{super_admin.username}"
     #password = "$ref{super_admin.password}"
