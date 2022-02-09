@@ -4090,7 +4090,7 @@ data:
     proxyPort = 30443
     
     [indexing]
-    starting_delay = "500"
+    starting_delay = "1000"
     bach_size = "10"
     pool_size = "10"
 ---
@@ -4187,7 +4187,7 @@ spec:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 250
+            initialDelaySeconds: 700
             periodSeconds: 10
           readinessProbe:
             exec:
@@ -4195,7 +4195,7 @@ spec:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 250
+            initialDelaySeconds: 500
             periodSeconds: 10
           lifecycle:
             preStop:

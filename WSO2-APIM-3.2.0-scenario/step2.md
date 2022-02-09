@@ -10,4 +10,4 @@ get the pod names from this step to use in the next steps.
 
 3) Check the logs of the APIM pod
 
-`kubectl logs <POD_NAME>`
+`kubectl logs -f <POD_NAME>`
