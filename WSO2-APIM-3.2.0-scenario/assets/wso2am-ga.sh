@@ -4203,8 +4203,8 @@ spec:
                 command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/wso2server.sh stop']
           resources:
             requests:
-              memory: 500Mi
-              cpu: 500m
+              memory: 1Gi
+              cpu: 1000m
             limits:
               memory: 1Gi
               cpu: 1000m
