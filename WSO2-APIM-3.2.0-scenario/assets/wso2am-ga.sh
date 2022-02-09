@@ -4187,7 +4187,7 @@ spec:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 700
+            initialDelaySeconds: 1000
             periodSeconds: 10
           readinessProbe:
             exec:
@@ -4195,7 +4195,7 @@ spec:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 500
+            initialDelaySeconds: 1000
             periodSeconds: 10
           lifecycle:
             preStop:

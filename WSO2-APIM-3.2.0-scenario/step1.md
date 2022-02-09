@@ -19,5 +19,5 @@ Once "Processing WSO2 API Manager" appears, distrupt the Progress bar by pressin
 
 4) Change the namespace for the current session
 
-`kubectl config set-context --current --namespace=ggckad-s2`{{execute}}
+`kubectl config set-context --current --namespace=wso2`{{execute}}
 
