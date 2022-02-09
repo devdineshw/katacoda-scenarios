@@ -4187,16 +4187,16 @@ spec:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 1000
-            periodSeconds: 10
+            initialDelaySeconds: 1500
+            periodSeconds: 60
           readinessProbe:
             exec:
               command:
                 - /bin/sh
                 - -c
                 - nc -z localhost 9443
-            initialDelaySeconds: 1000
-            periodSeconds: 10
+            initialDelaySeconds: 1500
+            periodSeconds: 60
           lifecycle:
             preStop:
               exec:
