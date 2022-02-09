@@ -4088,6 +4088,11 @@ data:
 
     [transport.https.properties]
     proxyPort = 30443
+    
+    [indexing]
+    starting_delay = "500"
+    bach_size = "10"
+    pool_size = "10"
 ---
 
 apiVersion: v1
