@@ -12,11 +12,16 @@
     ],
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+		"client": [
+			{ "file": "wso2am-ga.sh", "target": "~/wso2am-ga.sh", "chmod": "+x" }
+		]
+	}
   },
   "environment": {
     "hideintro": true,
-    "uilayout": "terminal-terminal"
+    "uilayout": "terminal"
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
