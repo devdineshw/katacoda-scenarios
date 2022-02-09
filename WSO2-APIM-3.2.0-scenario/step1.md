@@ -1,5 +1,3 @@
-# Steps
-
 
 1) Start the k8s cluster
 

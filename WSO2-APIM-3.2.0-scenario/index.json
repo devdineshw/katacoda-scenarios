@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Creating the environment",
         "text": "step1.md"
       }
     ],
@@ -15,7 +15,7 @@
     },
     "assets": {
 		"client": [
-			{ "file": "wso2am-ga.sh", "target": "~/wso2am-ga.sh", "chmod": "+x" }
+			{ "file": "wso2am-ga.sh", "target": "~/", "chmod": "+x" }
 		]
 	}
   },
