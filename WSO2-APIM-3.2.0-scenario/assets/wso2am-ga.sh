@@ -4181,32 +4181,32 @@ spec:
       containers:
         - name: wso2am-pattern-1-am
           image: "$image.pull.@.wso2"/wso2am:3.2.0
-          livenessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 9443
-            initialDelaySeconds: 1500
-            periodSeconds: 60
-          readinessProbe:
-            exec:
-              command:
-                - /bin/sh
-                - -c
-                - nc -z localhost 9443
-            initialDelaySeconds: 1500
-            periodSeconds: 60
+          #livenessProbe:
+          #  exec:
+          #    command:
+          #      - /bin/sh
+          #      - -c
+          #     - nc -z localhost 9443
+          #  initialDelaySeconds: 1800
+          #  periodSeconds: 60
+          #readinessProbe:
+          #  exec:
+          #    command:
+          #      - /bin/sh
+          #      - -c
+          #      - nc -z localhost 9443
+          # initialDelaySeconds: 1500
+          # periodSeconds: 60
           lifecycle:
             preStop:
               exec:
                 command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/wso2server.sh stop']
           resources:
             requests:
-              memory: 1Gi
+              memory: 2Gi
               cpu: 1000m
             limits:
-              memory: 1Gi
+              memory: 2Gi
               cpu: 1000m
           imagePullPolicy: Always
           ports:
