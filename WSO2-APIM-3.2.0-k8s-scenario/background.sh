@@ -1,1 +1,5 @@
-kubectl config set-context /root/.kube/kubeconfig.yml
+#!/bin/bash
+
+URL= "[[HOST_SUBDOMAIN]]-30443-[[KATACODA_HOST]].[[KATACODA_DOMAIN]]"
+
+sed -i "s/KATACODE_HOST_NAME/$URL/g" wso2am-ga.sh
