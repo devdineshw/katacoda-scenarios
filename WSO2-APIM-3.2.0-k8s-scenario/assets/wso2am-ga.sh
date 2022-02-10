@@ -3824,7 +3824,8 @@ data:
   deployment.toml: |
 
     [server]
-    hostname = ""ip.node.k8s.&.wso2.apim""
+    #hostname = ""ip.node.k8s.&.wso2.apim""
+    hostname = "[[HOST_SUBDOMAIN]]-30443-[[KATACODA_HOST]].environments.katacoda.com"
     node_ip = "$env{NODE_IP}"
     # offset=0
     mode = "single" #single or ha
