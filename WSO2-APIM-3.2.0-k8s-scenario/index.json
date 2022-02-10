@@ -8,7 +8,7 @@
       {
         "title": "Creating the environment",
         "text": "step1.md",
-        "code": "background.sh"
+        "code": "findhostname.sh"
       },
       {
         "title": "Check the instances",
@@ -25,7 +25,7 @@
     "assets": {
 		"client": [
 			{ "file": "wso2am-ga.sh", "target": "~/", "chmod": "+x" },
-			{ "file": "background.sh", "target": "~/", "chmod": "+x" }
+			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" }
 		]
 	}
   },
