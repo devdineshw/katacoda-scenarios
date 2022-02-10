@@ -24,7 +24,8 @@
     },
     "assets": {
 		"client": [
-			{ "file": "wso2am-ga.sh", "target": "~/", "chmod": "+x" }
+			{ "file": "wso2am-ga.sh", "target": "~/", "chmod": "+x" },
+			{ "file": "background.sh", "target": "~/", "chmod": "+x" }
 		]
 	}
   },
