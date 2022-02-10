@@ -4088,7 +4088,7 @@ data:
     'header.X-WSO2-KEY-MANAGER' = "default"
 
     [transport.https.properties]
-    proxyPort = 30443
+    proxyPort = 443
     
     [indexing]
     starting_delay = "1000"

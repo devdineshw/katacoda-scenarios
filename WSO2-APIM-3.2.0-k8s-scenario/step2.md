@@ -13,7 +13,7 @@ Usually APIM pod will take 10 to 15 mins to start on this environment
 `kubectl logs -f `{{execute}} 
 POD_NAME
 
-3) Check the pod events
+3) Optionally you could check the pod events
 
 `kubectl describe pod `{{execute}}
 POD_NAME
