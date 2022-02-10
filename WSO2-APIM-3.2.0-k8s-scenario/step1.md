@@ -11,13 +11,17 @@
 
 `ping -c 1 node01`{{execute}}
 
-3) Launch the setup script.
+3) Update the hostname
+
+`bash sethostname.sh`{{execute}}
+
+4) Launch the setup script.
 
 `bash wso2am-ga.sh --deploy`{{execute}}
 
 Once "Processing WSO2 API Manager" appears, distrupt the Progress bar by pressing the Ctrl+C
 
-4) Change the namespace for the current session
+5) Change the namespace for the current session
 
 `kubectl config set-context --current --namespace=wso2`{{execute}}
 
