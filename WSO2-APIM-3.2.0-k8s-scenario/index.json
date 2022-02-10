@@ -8,7 +8,7 @@
       {
         "title": "Creating the environment",
         "text": "step1.md",
-        "courseData": "foreground.sh"
+        "code": "foreground.sh"
       },
       {
         "title": "Check the instances",
