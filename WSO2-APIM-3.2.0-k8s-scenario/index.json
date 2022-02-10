@@ -10,8 +10,12 @@
         "text": "step1.md"
       },
       {
-        "title": "Check the services",
+        "title": "Check the instances",
         "text": "step2.md"
+      },
+      {
+        "title": "Expose the services",
+        "text": "step3.md"
       }
     ],
     "finish": {
