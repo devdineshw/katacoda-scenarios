@@ -1,5 +1,5 @@
 {
-  "title": "WSO2 APIM 3.2.0",
+  "title": "WSO2 APIM 3.2.0 on K8s",
   "description": "Running WSO2 APIM 3.2.0 on kubernetes",
   "difficulty": "Beginner",
   "time": "1 hour",
