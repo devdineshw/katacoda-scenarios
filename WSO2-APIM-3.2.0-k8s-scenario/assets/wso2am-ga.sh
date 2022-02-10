@@ -3825,7 +3825,7 @@ data:
 
     [server]
     #hostname = ""ip.node.k8s.&.wso2.apim""
-    hostname = "KATACODE_HOST_NAME"
+    hostname = "KATACODE_MGT_HOST"
     node_ip = "$env{NODE_IP}"
     # offset=0
     mode = "single" #single or ha
@@ -3887,8 +3887,8 @@ data:
     password= "${admin.password}"
     ws_endpoint = "ws://"ip.node.k8s.&.wso2.apim":9099"
     wss_endpoint = "wss://"ip.node.k8s.&.wso2.apim":8099"
-    http_endpoint = "http://"ip.node.k8s.&.wso2.apim":30280"
-    https_endpoint = "https://"ip.node.k8s.&.wso2.apim":30243"
+    http_endpoint = "http://KATACODE_API_HTTP_HOST"
+    https_endpoint = "https://KATACODE_API_HTTPS_HOST"
 
     #[apim.cache.gateway_token]
     #enable = true
