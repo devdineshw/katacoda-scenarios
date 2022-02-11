@@ -12,8 +12,11 @@
         "title": "Configuring Nginx",
         "text": "step2.md"
       },{
-        "title": "Configuring the Database",
+        "title": "Download and extract the APIM",
         "text": "step3.md"
+      },{
+        "title": "Configuring the Database",
+        "text": "step4.md"
       }
     ],
     "finish": {

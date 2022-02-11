@@ -1,4 +1,4 @@
-##1) Install the nginx
+1) Install the nginx
 
 `apt update`{{execute}}
 
@@ -9,7 +9,7 @@ Test the nginx setup by accessing the URL. You should see the nginx home page
 
 https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-##2) Configure the SSL for nginx
+2) Configure the SSL for nginx
 
 Create a key file for the server
 
