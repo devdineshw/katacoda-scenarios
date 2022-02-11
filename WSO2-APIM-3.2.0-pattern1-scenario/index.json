@@ -6,8 +6,11 @@
   "details": {
     "steps": [
       {
-        "title": "Creating the environment",
+        "title": "Installing Nginx",
         "text": "step1.md"
+      },{
+        "title": "Configuring Nginx",
+        "text": "step2.md"
       }
     ],
     "finish": {

@@ -1,4 +1,3 @@
-# Configure the load balancer/reverse proxy server
 
 Edit the sample nginx config file
 

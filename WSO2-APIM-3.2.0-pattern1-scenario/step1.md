@@ -1,4 +1,3 @@
-#Create an SSL certificate for the load balancer
 ##1) Install the nginx
 
 `apt update`{{execute}}
