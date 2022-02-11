@@ -13,11 +13,11 @@ https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 Create a key file for the server
 
-`openssl genrsa -des3 -out nginx.key 1024`{{execute}}
+`openssl genrsa -des3 -out nginx.key 2048`{{execute}}
 
 Create the Sign Request (CSR)
 
-`openssl req -new -key nginx.key -out server.csr`{{execute}}
+`openssl req -new -key nginx.key -out nginx.csr -passout pass:"nginx" -subj "/C=US/O=WSO2/OU=CS/CN=*.katacode.com" -addext "subjectAltName = DNS:[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com" -newkey rsa:2048`{{execute}}
 
 Remove the password from the key file
 
