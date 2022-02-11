@@ -8,7 +8,7 @@ Create a directory
 
 Extract the WSO2 APIM binary to the new folder
 
-`unzip wso2am-3.2.0.zip apim1/`{{execute}}
+`unzip wso2am-3.2.0.zip -d apim1/`{{execute}}
 
 
 Download the MySQL JDBC Driver

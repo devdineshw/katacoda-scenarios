@@ -27,8 +27,8 @@ password = "root"
 driver = "com.mysql.cj.jdbc.Driver"
 
 [[apim.gateway.environment]]
-http_endpoint = "http://[[HOST_SUBDOMAIN]]-8243-[[KATACODA_HOST]].environments.katacoda.com"
-https_endpoint = "https://[[HOST_SUBDOMAIN]]-8243-[[KATACODA_HOST]].environments.katacoda.com"
+http_endpoint = "http://[[HOST_SUBDOMAIN]]-8280-[[KATACODA_HOST]].environments.katacoda.com"
+https_endpoint = "https://[[HOST_SUBDOMAIN]]-4443-[[KATACODA_HOST]].environments.katacoda.com"
 
 [apim.devportal]
 url = "https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com/devportal"

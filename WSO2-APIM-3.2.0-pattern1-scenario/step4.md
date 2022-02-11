@@ -14,6 +14,12 @@ Connect to MySQL. Enter the password that you have entered suring the previous s
 
 `mysql -u root -p`{{execute}}
 
+Reset the root user password
+
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';`{{execute}}
+
+`FLUSH PRIVILEGES;`{{execute}}
+
 Create a two schemas in the MySQL
 
 `create database am_db;`{{execute}}
