@@ -13,7 +13,7 @@ https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 Create a key file for the server
 
-`openssl genrsa -des3 -out nginx.key 2048 -passout pass:nginx`{{execute}}
+`openssl genrsa -passout nginx -des3 -out nginx.key 2048`{{execute}}
 
 Create the Sign Request (CSR)
 
@@ -23,11 +23,11 @@ Remove the password from the key file
 
 `cp nginx.key nginx.key.org`{{execute}}
 
-`openssl rsa -in nginx.key.org -out nginx.key`{{execute}}
+`openssl rsa -in nginx.key.org -passin pass:nginx -out nginx.key`{{execute}}
 
 Sign the certificate
 
-`openssl x509 -req -days 365 -in server.csr -signkey nginx.key -out nginx.crt`{{execute}}
+`openssl x509 -req -days 365 -in nginx.csr -signkey nginx.key -out nginx.crt`{{execute}}
 
 Create a directory to store the key files and copy
 
