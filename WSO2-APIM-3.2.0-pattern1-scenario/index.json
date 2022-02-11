@@ -17,6 +17,9 @@
       },{
         "title": "Configuring the Database",
         "text": "step4.md"
+      },{
+        "title": "Configuring the APIM",
+        "text": "step5.md"
       }
     ],
     "finish": {
