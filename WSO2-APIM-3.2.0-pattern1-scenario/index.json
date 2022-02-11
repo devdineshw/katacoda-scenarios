@@ -11,6 +11,9 @@
       },{
         "title": "Configuring Nginx",
         "text": "step2.md"
+      },{
+        "title": "Configuring the Database",
+        "text": "step3.md"
       }
     ],
     "finish": {
