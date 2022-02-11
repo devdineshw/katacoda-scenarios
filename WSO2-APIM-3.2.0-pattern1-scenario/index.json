@@ -12,7 +12,12 @@
     ],
     "finish": {
       "text": "finish.md"
-    }
+    },
+    "assets": {
+		"client": [
+			{ "file": "apim-nginx.conf", "target": "~/", "chmod": "+w" },
+		]
+	}
   },
   "environment": {
     "hideintro": true,
