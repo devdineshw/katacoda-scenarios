@@ -18,8 +18,14 @@
         "title": "Configuring the Database",
         "text": "step4.md"
       },{
-        "title": "Configuring the APIM",
+        "title": "Configuring the first APIM instance",
         "text": "step5.md"
+      },{
+        "title": "Configuring the Second APIM instance",
+        "text": "step6.md"
+      },{
+        "title": "Testing the setup",
+        "text": "step7.md"
       }
     ],
     "finish": {
