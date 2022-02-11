@@ -13,7 +13,7 @@ https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 Create a key file for the server
 
-`openssl genrsa -passout nginx -des3 -out nginx.key 2048`{{execute}}
+`openssl genrsa -passout pass:nginx -des3 -out nginx.key 2048`{{execute}}
 
 Create the Sign Request (CSR)
 
