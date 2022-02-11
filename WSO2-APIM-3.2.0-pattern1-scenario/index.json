@@ -15,7 +15,7 @@
     },
     "assets": {
 		"client": [
-			{ "file": "apim-nginx.conf", "target": "~/", "chmod": "+w" },
+			{ "file": "apim-nginx.conf", "target": "~/", "chmod": "+w" }
 		]
 	}
   },
