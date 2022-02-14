@@ -3,18 +3,13 @@ Edit the sample nginx config file
 
 Open the file and update the host name placeholders with katacode host
 
-KATACODE_HTTP_HOST
+```
+KATACODE_HTTP_HOST = [[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
-http://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+KATACODE_HTTPS_HOST = [[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com
 
-KATACODE_HTTPS_HOST
-
-https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com
-
-KATACODE_GW_HOST
-
-https://[[HOST_SUBDOMAIN]]-8243-[[KATACODA_HOST]].environments.katacoda.com
-
+KATACODE_GW_HOST = [[HOST_SUBDOMAIN]]-8243-[[KATACODA_HOST]].environments.katacoda.com
+```
 
 `vi apim-nginx.conf`{{execute}}
 
