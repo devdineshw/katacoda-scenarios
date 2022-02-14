@@ -1,27 +1,19 @@
 
-1) Start the k8s cluster
+1) Install the prerequisites. 
 
-`launch.sh`{{execute}}
+In this environment all the tools are pre-installed. You could check the availability
 
-2) Check the cluster status. Wait till both nodes becomes ready.
+`git -v`{{execute}}
+`docker -v`{{execute}}
+`docker-compose -v`{{execute}}
 
-`kubectl get nodes`{{execute}}
+2) Login into the WSO2 docker registry. Enter the WSO2 username and password.
 
-3) Find the IP of the worker node. This might be required when running the next step.
+`docker login docker.wso2.com`{{execute}}
 
-`ping -c 1 node01`{{execute}}
+3) Clone the sample docker files from the WSO2 GIT repository and checkout the related version
 
-3) Update the hostname
-
-`bash sethostname.sh`{{execute}}
-
-4) Launch the setup script.
-
-`bash wso2am-ga.sh --deploy`{{execute}}
-
-Once "Processing WSO2 API Manager" appears, distrupt the Progress bar by pressing the Ctrl+C
-
-5) Change the namespace for the current session
-
-`kubectl config set-context --current --namespace=wso2`{{execute}}
+`git clone https://github.com/wso2/docker-apim`{{execute}}
+`cd docker-apim`{{execute}}
+`git checkout tags/v3.2.0.1`{{execute}}
 
