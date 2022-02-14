@@ -11,6 +11,9 @@
       },{
         "title": "Start the WSO2 APIM",
         "text": "step2.md"
+      },{
+        "title": "Testing the Environment",
+        "text": "step3.md"
       }
     ],
     "finish": {

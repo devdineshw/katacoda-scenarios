@@ -30,4 +30,7 @@ In this environment all the tools are pre-installed. You could check the availab
 ```
 [server]
 hostname = "[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com"
+
+[transport.https.properties]
+proxyPort = 443
 ```
