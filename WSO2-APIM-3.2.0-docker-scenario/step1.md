@@ -3,8 +3,10 @@
 
 In this environment all the tools are pre-installed. You could check the availability
 
-`git -v`{{execute}}
+`git --version`{{execute}}
+
 `docker -v`{{execute}}
+
 `docker-compose -v`{{execute}}
 
 2) Login into the WSO2 docker registry. Enter the WSO2 username and password.
@@ -14,6 +16,18 @@ In this environment all the tools are pre-installed. You could check the availab
 3) Clone the sample docker files from the WSO2 GIT repository and checkout the related version
 
 `git clone https://github.com/wso2/docker-apim`{{execute}}
+
 `cd docker-apim`{{execute}}
+
 `git checkout tags/v3.2.0.1`{{execute}}
 
+[Optional] Update the following configarations only in the katacode environment
+
+4) Update the hostname
+
+`vi docker-compose/apim-with-analytics/conf/apim/repository/conf/deployment.toml`{{execute}}
+
+```
+[server]
+hostname = "[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com"
+```

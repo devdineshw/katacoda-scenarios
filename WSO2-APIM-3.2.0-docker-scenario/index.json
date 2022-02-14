@@ -8,6 +8,9 @@
       {
         "title": "Creating the environment",
         "text": "step1.md"
+      },{
+        "title": "Start the WSO2 APIM",
+        "text": "step2.md"
       }
     ],
     "finish": {
