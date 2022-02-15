@@ -6,14 +6,23 @@
   "details": {
     "steps": [
       {
-        "title": "Creating the environment",
+        "title": "Prerequisites",
         "text": "step1.md"
       },{
-        "title": "Start the WSO2 APIM",
+        "title": "Configure the DB",
         "text": "step2.md"
       },{
-        "title": "Testing the Environment",
+        "title": "Configure the APIM",
         "text": "step3.md"
+      },{
+        "title": "Configure the Analytics worker",
+        "text": "step4.md"
+      },{
+        "title": "Configure the Analytics dashboard",
+        "text": "step5.md"
+      },{
+        "title": "Starting the instances",
+        "text": "step6.md"
       }
     ],
     "finish": {

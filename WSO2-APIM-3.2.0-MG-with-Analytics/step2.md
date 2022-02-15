@@ -8,10 +8,6 @@ Check the service status
 
 `systemctl status mysql`{{execute}}
 
-Configure the MySQL instance
-
-`mysql_secure_installation`{{execute}}
-
 Connect to MySQL. Enter the password that you have entered suring the previous step.
 
 `mysql -u root -p`{{execute}}
@@ -22,11 +18,17 @@ Reset the root user password
 
 `FLUSH PRIVILEGES;`{{execute}}
 
-Create a two schemas in the MySQL
+Create the databases in the MySQL
 
 `create database am_db;`{{execute}}
 
 `create database shared_db;`{{execute}}
+
+`create database analytics_db;`{{execute}}
+
+(Optional) Make the database case sensitive
+
+`ALTER DATABASE analytics_db COLLATE latin1_general_cs ;`{{execute}}
 
 Exit from the MySQL consol and create the tables using the DB scripts comes with the WSO2 APIM
 
