@@ -4,17 +4,17 @@ Download the WSO2 Micro Gateway
 
 `wget --user <USERNAME> --ask-password https://product-dist.wso2.com/products/micro-gateway/runtime/3.2.3/wso2am-micro-gw-linux-3.2.3.zip`{{copy}}
 
-Create a directory
+Create a directory for Micro Gateway runtime and toolkit
 
 `mkdir wso2mg`{{execute}}
 
-Extract the WSO2 APIM binary to the new folder
+Extract the zip files
 
 `unzip wso2am-micro-gw-toolkit-linux-3.2.0.zip -d wso2mg/`{{execute}}
 
 `unzip wso2am-micro-gw-linux-3.2.3.zip -d wso2mg/`{{execute}}
 
-Download the MySQL JDBC Driver
+Set the PATH Environment variable
 
-`export PATH="/root/mg/wso2am-micro-gw-toolkit-linux-3.2.0/bin/:/root/mg/wso2am-micro-gw-linux-3.2.3/bin/:$PATH"`{{execute}}
+`export PATH="/root/wso2mg/wso2am-micro-gw-toolkit-linux-3.2.0/bin/:/root/wso2mg/wso2am-micro-gw-linux-3.2.3/bin/:$PATH"`{{execute}}
 
