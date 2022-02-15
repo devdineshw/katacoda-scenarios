@@ -10,11 +10,11 @@ Edit the APIM_ANALYTICS_DB section.
 - name: APIM_ANALYTICS_DB
     description: "The datasource used for APIM statistics aggregated data."
     jndiConfig:
-    name: jdbc/APIM_ANALYTICS_DB
+      name: jdbc/APIM_ANALYTICS_DB
     definition:
-    type: RDBMS
-    configuration:
-        jdbcUrl: 'jdbc:mysql://localhost:3306/analytics_db'
+      type: RDBMS
+      configuration:
+        jdbcUrl: 'jdbc:mysql://localhost:3306/analytics_db?autoReconnect=true&useSSL=false'
         username: 'root'
         password: 'root'
         driverClassName: com.mysql.cj.jdbc.Driver

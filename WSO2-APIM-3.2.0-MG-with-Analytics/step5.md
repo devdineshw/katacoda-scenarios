@@ -5,40 +5,41 @@ Open the Analytics configuration file
 Edit the APIM_ANALYTICS_DB section.
 
 ```
-- name: AM_DB
-    description: Main datasource used by API Manager
-    jndiConfig:
-     name: jdbc/AM_DB
-    definition:
-     type: RDBMS
-     configuration:
-       jdbcUrl: "jdbc:mysql://localhost:3306/am_db"
-       username: root
-       password: root
-       driverClassName: com.mysql.cj.jdbc.Driver
-       maxPoolSize: 10
-       idleTimeout: 60000
-       connectionTestQuery: SELECT 1
-       validationTimeout: 30000
-       isAutoCommit: false
-       
-- name: APIM_ANALYTICS_DB
-    description: "The datasource used for APIM statistics aggregated data."
-    jndiConfig:
-    name: jdbc/APIM_ANALYTICS_DB
-    definition:
-    type: RDBMS
-    configuration:
-        jdbcUrl: 'jdbc:mysql://localhost:3306/analytics_db'
-        username: 'root'
-        password: 'root'
-        driverClassName: com.mysql.cj.jdbc.Driver
-        minIdle: 5
-        maxPoolSize: 50
-        idleTimeout: 60000
-        connectionTestQuery: SELECT 1
-        validationTimeout: 30000
-        isAutoCommit: false
+  - name: APIM_ANALYTICS_DB
+      description: "The datasource used for APIM statistics aggregated data."
+      jndiConfig:
+        name: jdbc/APIM_ANALYTICS_DB
+      definition:
+        type: RDBMS
+        configuration:
+          jdbcUrl: 'jdbc:mysql://localhost:3306/analytics_db?autoReconnect=true&useSSL=false'
+          username: 'root'
+          password: 'root'
+          driverClassName: com.mysql.cj.jdbc.Driver
+          minIdle: 5
+          maxPoolSize: 50
+          idleTimeout: 60000
+          connectionTestQuery: SELECT 1
+          validationTimeout: 30000
+          isAutoCommit: false
+
+  - name: AM_DB
+      description: Main datasource used by API Manager
+      jndiConfig:
+        name: jdbc/AM_DB
+      definition:
+        type: RDBMS
+        configuration:
+          jdbcUrl: "jdbc:mysql://localhost:3306/am_db?autoReconnect=true&useSSL=false"
+          username: root
+          password: root
+          driverClassName: com.mysql.cj.jdbc.Driver
+          maxPoolSize: 10
+          idleTimeout: 60000
+          connectionTestQuery: SELECT 1
+          validationTimeout: 30000
+          isAutoCommit: false
+         
 ```
 
 (Optional) Configure the SSO configurations according to the environment. 

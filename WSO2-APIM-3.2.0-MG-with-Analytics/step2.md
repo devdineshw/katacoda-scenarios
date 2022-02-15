@@ -8,9 +8,9 @@ Check the service status
 
 `systemctl status mysql`{{execute}}
 
-Connect to MySQL. Enter the password that you have entered suring the previous step.
+Connect to MySQL.
 
-`mysql -u root -p`{{execute}}
+`mysql -u root`{{execute}}
 
 Reset the root user password
 
@@ -32,7 +32,7 @@ Create the databases in the MySQL
 
 Exit from the MySQL consol and create the tables using the DB scripts comes with the WSO2 APIM
 
-`mysql -u root -p -v am_db < apim1/wso2am-3.2.0/dbscripts/apimgt/mysql.sql`{{execute}}
+`mysql -u root -p -v am_db < apim/wso2am-3.2.0/dbscripts/apimgt/mysql.sql`{{execute}}
 
-`mysql -u root -p -v shared_db < apim1/wso2am-3.2.0/dbscripts/mysql.sql`{{execute}}
+`mysql -u root -p -v shared_db < apim/wso2am-3.2.0/dbscripts/mysql.sql`{{execute}}
 
