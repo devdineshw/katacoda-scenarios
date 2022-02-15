@@ -1,6 +1,6 @@
 {
-  "title": "WSO2 APIM 3.2.0 on Docker",
-  "description": "Running WSO2 APIM 3.2.0 on docker",
+  "title": "WSO2 APIM 3.2.0 MG with Analytics",
+  "description": "Running WSO2 APIM 3.2.0 Micro Gateway with Analytics",
   "difficulty": "Advanced",
   "time": "1 hour",
   "details": {

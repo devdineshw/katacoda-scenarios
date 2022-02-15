@@ -34,3 +34,4 @@ hostname = "[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com"
 [transport.https.properties]
 proxyPort = 443
 ```
+
