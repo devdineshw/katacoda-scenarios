@@ -18,3 +18,21 @@ Set the PATH Environment variable
 
 `export PATH="/root/wso2mg/wso2am-micro-gw-toolkit-linux-3.2.0/bin/:/root/wso2mg/wso2am-micro-gw-linux-3.2.3/bin/:$PATH"`{{execute}}
 
+Update the configuration
+
+Open the micro gateway config file
+
+`vi wso2mg/wso2am-micro-gw-linux-3.2.3/conf/micro-gw.conf`{{execute}}
+
+update the analytics section and save
+
+```
+[analytics.fileUpload]
+    enable=true
+    uploadingTimeSpanInMillis=600000
+    uploadingEndpoint="https://localhost:9444/analytics/v1.0/usage/upload-file"
+    rotatingPeriod=60000
+    taskUploadFiles=true
+    username="admin"
+    password="admin"
+```
