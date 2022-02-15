@@ -23,6 +23,12 @@
       },{
         "title": "Starting the instances",
         "text": "step6.md"
+      },{
+        "title": "Setup the Micro Gateway environment",
+        "text": "step7.md"
+      },{
+        "title": "Build a Micro Gateway using an Open API definition",
+        "text": "step8.md"
       }
     ],
     "finish": {
