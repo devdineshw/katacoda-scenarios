@@ -1,5 +1,5 @@
 {
-  "title": "WSO2 APIM 3.2.0 Pattern 1",
+  "title": "WSO2 APIM 3.2.0 Lab 1 - Pattern 1 Deployment",
   "description": "Running WSO2 APIM 3.2.0 in HA with nginx",
   "difficulty": "Beginner",
   "time": "1 hour",
