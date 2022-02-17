@@ -1,25 +1,31 @@
 {
-  "title": "WSO2 APIM 3.2.0 Lab 6 - XACML",
-  "description": "WSO2 APIM 3.2.0 RBAC with XACML ",
+  "title": "WSO2 APIM 3.2.0 Lab 02 - Pattern 1 Deployment",
+  "description": "Running WSO2 APIM 3.2.0 in HA with nginx",
   "difficulty": "Beginner",
   "time": "1 hour",
   "details": {
     "steps": [
       {
-        "title": "Download and extract the APIM",
+        "title": "Installing Nginx",
         "text": "step1.md"
       },{
-        "title": "Configuring the Database",
+        "title": "Configuring Nginx",
         "text": "step2.md"
       },{
-        "title": "Configuring the first APIM instance",
+        "title": "Download and extract the APIM",
         "text": "step3.md"
       },{
-        "title": "Configuring the Second APIM instance",
+        "title": "Configuring the Database",
         "text": "step4.md"
       },{
-        "title": "Testing the setup",
+        "title": "Configuring the first APIM instance",
         "text": "step5.md"
+      },{
+        "title": "Configuring the Second APIM instance",
+        "text": "step6.md"
+      },{
+        "title": "Testing the setup",
+        "text": "step7.md"
       }
     ],
     "finish": {
