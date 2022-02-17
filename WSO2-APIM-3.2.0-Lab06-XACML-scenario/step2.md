@@ -22,7 +22,7 @@ Create a two schemas in the MySQL
 
 `create database shared_db;`{{execute}}
 
-Exit from the MySQL consol and create the tables using the DB scripts comes with the WSO2 APIM
+`exit`{{execute}} from the MySQL consol and create the tables using the DB scripts comes with the WSO2 APIM
 
 `mysql -u root -p -v am_db < wso2/wso2am-3.2.0/dbscripts/apimgt/mysql.sql`{{execute}}
 
