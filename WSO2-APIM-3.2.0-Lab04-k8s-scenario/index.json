@@ -1,6 +1,6 @@
 {
-  "title": "WSO2 APIM 3.2.0 on K8s",
-  "description": "Running WSO2 APIM 3.2.0 Lab 04 - Deployment on kubernetes",
+  "title": "WSO2 APIM 3.2.0 Lab 04 - Deployment on K8s",
+  "description": "Running WSO2 APIM 3.2.0 Deployment on kubernetes",
   "difficulty": "Beginner",
   "time": "1 hour",
   "details": {
