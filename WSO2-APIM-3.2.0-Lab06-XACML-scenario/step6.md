@@ -8,7 +8,7 @@ Create an xml file called 'EntitlementMediator.xml' in your local machine with t
 
 Go the Publisher portal 
 
-https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com/publisher
+https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/publisher
 
 
 Follow the steps 14 to 16 on the following page

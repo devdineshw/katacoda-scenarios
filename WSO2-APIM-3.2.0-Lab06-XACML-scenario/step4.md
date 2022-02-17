@@ -6,7 +6,7 @@ Update the proxy configurations and DB Connections as follows.
 
 ```
 [server]
-hostname = "[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com"
+hostname = "[[HOST_SUBDOMAIN]]-9444-[[KATACODA_HOST]].environments.katacoda.com"
 offset=1
 
 [transport.https.properties]
