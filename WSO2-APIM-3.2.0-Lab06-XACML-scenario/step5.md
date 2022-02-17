@@ -4,7 +4,7 @@ Download the XACML jar file and copy it to the APIM server
 
 `cp entitlement-1.0-SNAPSHOT.jar wso2/wso2am-3.2.0/repository/components/lib`{{execute}}
 
-Start the first APIM instance
+Start the APIM instance
 
 `sh wso2/wso2am-3.2.0/bin/wso2server.sh start`{{execute}}
 
