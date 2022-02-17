@@ -12,7 +12,12 @@ hostname = "[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com"
 [transport.https.properties]
 proxyPort = 443
 
-[database.identity_db]
+[indexing]
+starting_delay = "120"
+bach_size = "10"
+pool_size = "10"
+
+[database.apim_db]
 type = "mysql"
 url = "jdbc:mysql://localhost:3306/am_db?useSSL=false"
 username = "root"
@@ -25,6 +30,13 @@ url = "jdbc:mysql://localhost:3306/shared_db?useSSL=false"
 username = "root"
 password = "root"
 driver = "com.mysql.cj.jdbc.Driver"
+
+[[apim.gateway.environment]]
+http_endpoint = "http://[[HOST_SUBDOMAIN]]-8280-[[KATACODA_HOST]].environments.katacoda.com"
+https_endpoint = "https://[[HOST_SUBDOMAIN]]-8243-[[KATACODA_HOST]].environments.katacoda.com"
+
+[apim.devportal]
+url = "https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/devportal"
 
 ```
 

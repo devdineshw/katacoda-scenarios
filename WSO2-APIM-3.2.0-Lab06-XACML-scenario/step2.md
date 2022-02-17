@@ -1,6 +1,6 @@
 Install the MySQL 
 
-`apt install mysql-server -y`{{execute}}
+`apt update && apt install mysql-server -y`{{execute}}
 
 Check the service status
 
