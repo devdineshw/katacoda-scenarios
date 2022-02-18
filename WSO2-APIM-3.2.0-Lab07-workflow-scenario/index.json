@@ -22,7 +22,7 @@
     },
     "assets": {
 		"client": [
-			{ "file": "deployment.toml", "target": "~/", "chmod": "+x" },
+			{ "file": "deployment.toml", "target": "~/", "chmod": "o+r" },
 			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" }
 		]
 	}
