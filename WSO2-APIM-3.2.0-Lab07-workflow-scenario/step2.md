@@ -1,12 +1,19 @@
+Access the URLs and verify the setup
 
-1) Start the WSO2 instances using docker-compose
+https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/carbon
 
-Move to the relevnt directory
+Follow the below steps to enable workflows
 
-`cd docker-compose/apim-with-analytics/`{{execute}}
+1) Click Main → Resources → Browse
 
+2) Go to the /_system/governance/apimgt/applicationdata/workflow-extensions.xml 
+click on Edit as text to edit the file, disable the Simple Workflow Executor, and enable Approval Workflow Executor for application creation
 
-Start the instances
+```
+<WorkFlowExtensions>
+    <!--ApplicationCreation executor="org.wso2.carbon.apimgt.impl.workflow.ApplicationCreationSimpleWorkflowExecutor"-->
+    <ApplicationCreation executor="org.wso2.carbon.apimgt.impl.workflow.ApplicationCreationApprovalWorkflowExecutor"/>
+</WorkFlowExtensions>
+```
 
-`docker-compose up --build`{{execute}}
 
