@@ -24,7 +24,8 @@
 		"client": [
 			{ "file": "deployment.toml", "target": "~/", "chmod": "o+r" },
 			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" },
-			{ "file": "org.wso2.carbon.test.handler", "target": "~/", "chmod": "+rw" }
+			{ "file": "custom-handler.zip", "target": "~/", "chmod": "+rw" },
+			{ "file": "apache-maven-3.2.1-bin.tar.gz", "target": "~/", "chmod": "+rw" }
 		]
 	}
   },
