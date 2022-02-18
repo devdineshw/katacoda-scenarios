@@ -1,9 +1,5 @@
-1) Create an application via the Developer Portal
+1) Create an API in the publisher
 
-https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/devportal
+https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/publisher
 
-2) Sign in to the Admin Portal, list all the tasks for application creation from Tasks → Application Creation and approve or reject the task. 
-
-https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/admin
-
-3) Go back to the Applications page in the WSO2 Developer Portal and see the created application
+2) Invoke the API and check the logs
