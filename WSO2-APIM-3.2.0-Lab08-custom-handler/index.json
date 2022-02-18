@@ -10,11 +10,15 @@
         "text": "step1.md",
         "code": "findhostname.sh"
       },{
-        "title": "Configuring the WSO2 APIM",
-        "text": "step2.md"
+        "title": "Build the custom handler (optional)",
+        "text": "step2.md",
+        "code": "step2-script.sh"
       },{
-        "title": "Testing the Environment",
+        "title": "Configure the handler with APIM",
         "text": "step3.md"
+      },{
+        "title": "Test the Scecnario",
+        "text": "step4.md"
       }
     ],
     "finish": {
