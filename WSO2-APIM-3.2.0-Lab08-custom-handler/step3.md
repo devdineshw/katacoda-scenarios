@@ -1,9 +1,3 @@
-1) Create an application via the Developer Portal
+Copy the jar file to APIM
 
-https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/devportal
-
-2) Sign in to the Admin Portal, list all the tasks for application creation from Tasks → Application Creation and approve or reject the task. 
-
-https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/admin
-
-3) Go back to the Applications page in the WSO2 Developer Portal and see the created application
+`cp org.wso2.carbon.test-1.0-SNAPSHOT.jar wso2am-3.2.0/repository/components/lib/org.wso2.carbon.test-1.0-SNAPSHOT.jar`{{execute}}

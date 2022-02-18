@@ -29,6 +29,7 @@
 			{ "file": "deployment.toml", "target": "~/", "chmod": "o+r" },
 			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" },
 			{ "file": "custom-handler.zip", "target": "~/", "chmod": "+rw" },
+			{ "file": "org.wso2.carbon.test-1.0-SNAPSHOT.jar", "target": "~/", "chmod": "+xrw" },
 			{ "file": "apache-maven-3.2.1-bin.tar.gz", "target": "~/", "chmod": "+rw" }
 		]
 	}
