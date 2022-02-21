@@ -26,7 +26,8 @@
     },
     "assets": {
 		"client": [
-			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" }
+			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" },
+			{ "file": "deployment.toml", "target": "~/", "chmod": "+x" }
 		]
 	}
   },
