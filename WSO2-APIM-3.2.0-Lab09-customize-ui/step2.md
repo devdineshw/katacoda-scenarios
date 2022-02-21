@@ -1,13 +1,17 @@
-Extract the source code zip file
+Move to the jaggery apps directory
 
-`unzip custom-handler.zip`{{execute}}
+`cd wso2am-3.2.0/repository/deployment/server/jaggeryapps`{{execute}}
 
-Update the java class if required
+Execute the following commands to install the dependancies
+
+`npm install`{{execute}}
+
+`npm run bootstrap`{{execute}}
+
 
 Build the project
 
-`mvn clean install -f org.wso2.carbon.test.handler/pom.xml`{{execute}}
+`npm run build:dev`{{execute}}
 
-Copy the build artifact to the home directory
 
-`cp org.wso2.carbon.test.handler/target/org.wso2.carbon.test-1.0-SNAPSHOT.jar org.wso2.carbon.test-1.0-SNAPSHOT.jar`{{execute}}
+
