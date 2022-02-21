@@ -11,8 +11,7 @@
         "code": "findhostname.sh"
       },{
         "title": "Install the Tomcat",
-        "text": "step2.md",
-        "code": "step2-script.sh"
+        "text": "step2.md"
       },{
         "title": "Configure the application",
         "text": "step3.md"
@@ -27,6 +26,7 @@
     "assets": {
 		"client": [
 			{ "file": "deployment.toml", "target": "~/", "chmod": "o+r" },
+			{ "file": "pom.xml", "target": "~/", "chmod": "o+r" },
 			{ "file": "sethostname.sh", "target": "~/", "chmod": "+x" }
 		]
 	}

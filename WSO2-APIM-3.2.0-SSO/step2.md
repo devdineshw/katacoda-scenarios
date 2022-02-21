@@ -4,11 +4,13 @@ Extract the source code zip file
 
 `unzip apache-tomcat-8.5.75.zip`{{execute}}
 
-Update the java class if required
+Checkout the WSO2 IAM Samples directory
 
-Build the project
+`git clone https://github.com/wso2/samples-is.git`{{execute}}
 
-`mvn clean install -f org.wso2.carbon.test.handler/pom.xml`{{execute}}
+Build the sample project
+
+`mvn clean install -f samples-is/pom.xml`{{execute}}
 
 Copy the build artifact to the home directory
 
