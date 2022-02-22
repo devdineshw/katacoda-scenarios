@@ -1,17 +1,14 @@
-Move to the jaggery apps directory
+1) Go to the publisher portal and create an API
 
-`cd wso2am-3.2.0/repository/deployment/server/jaggeryapps`{{execute}}
+2) Go to the documents tab and follow the steps in 
 
-Execute the following commands to install the dependancies
+https://apim.docs.wso2.com/en/3.2.0/develop/customizations/customizing-the-developer-portal/override-api-overview-page-per-api/
 
-`npm install`{{execute}}
+Use the following content for example
 
-`npm run bootstrap`{{execute}}
+```
+<b>___name___:___version___</b>
 
-
-Build the project
-
-`npm run build:dev`{{execute}}
-
-
+This API was published by ___provider___ as a ___type___ API which is in ___lifeCycleStatus___ state and has ___avgRating___ rating from it's users. You should send the ___authorizationHeader___ header when invoking the API. 
+```
 

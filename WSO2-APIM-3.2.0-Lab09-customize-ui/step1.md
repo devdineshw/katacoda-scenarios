@@ -14,4 +14,12 @@ Copy the config file
 
 `cp deployment.toml wso2am-3.2.0/repository/conf/deployment.toml`{{execute}}
 
+Start the service
 
+`sh wso2am-3.2.0/bin/wso2server.sh start`{{execute}}
+
+Check the logs
+
+`tail -f wso2am-3.2.0/repository/logs/wso2carbon.log`{{execute}}
+
+Wait till the server starts

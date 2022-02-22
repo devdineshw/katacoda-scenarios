@@ -1,27 +1,75 @@
-Copy the jar file to APIM
+1) Copy image to the web app
 
-`cp org.wso2.carbon.test-1.0-SNAPSHOT.jar wso2am-3.2.0/repository/components/lib/org.wso2.carbon.test-1.0-SNAPSHOT.jar`{{execute}}
+`cp ti_*.jpg wso2am-3.2.0/repository/deployment/server/jaggeryapps/devportal/site/public/images/landing`{{execute}}
 
+2) Open the defaultTheme.js inside the devportal app
 
-Update the velocity template file (in the publisher profile if it is distributed setup)
+`vi wso2am-3.2.0/repository/deployment/server/jaggeryapps/devportal/site/public/theme/defaultTheme.js`{{execute}}
 
-`vi wso2am-3.2.0/repository/resources/api_templates/velocity_template.xml`{{execute}}
-
-Add the following section
+3) Add the following section
 ```
-<handler class="org.wso2.carbon.test.CustomHandler" />
+const Configurations = {
+    custom: {
+        landingPage: {
+            active: true,
+            carousel: {
+                active: true,
+                slides: [
+                    {
+                        src: '/site/public/images/landing/ti_1.jpg',
+                        title: '',
+                        content:
+                            '',
+                    },
+                    {
+                        src: '/site/public/images/landing/ti_2.jpg',
+                        title: '',
+                        content:
+                            '',
+                    },
+                    {
+                        src: '/site/public/images/landing/ti_3.jpg',
+                        title: '',
+                        content:
+                            '',
+                    },
+                ],
+            },
+            listByTag: {
+                active: true,
+                content: [
+                    {
+                        tag: 'Booking',
+                        title: 'Checkout our Booking APIs',
+                        description:
+                            '',
+                        maxCount: 5,
+                    },
+                    {
+                        tag: 'Schedule',
+                        title: 'Checkout our Schdule APIs',
+                        description:
+                            '',
+                        maxCount: 5,
+                    },
+                ],
+            },
+            parallax: {
+                active: false,
+            },
+            contact: {
+                active: true,
+            },
+        },
+    },
+}
 ```
+
+4) Check the devportal again to see the new home page
+
+https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/devportal
 
 Check the following documentation for more details
 
-https://apim.docs.wso2.com/en/3.1.0/develop/extending-api-manager/extending-gateway/writing-custom-handlers/#engaging-the-custom-handler
+https://apim.docs.wso2.com/en/3.2.0/develop/customizations/customizing-the-developer-portal/enable-or-disable-home-page/#steps-to-configure-the-landing-page
 
-Start the service
-
-`sh wso2am-3.2.0/bin/wso2server.sh start`{{execute}}
-
-Check the logs
-
-`tail -f wso2am-3.2.0/repository/logs/wso2carbon.log`{{execute}}
-
-Wait till the server starts
