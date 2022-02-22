@@ -35,10 +35,10 @@ adminUsername=admin
 adminPassword=admin
 ```
 
-Save the file an build the sample project
+4) Save the file an build the sample project
 
 `mvn clean install -f samples-is/pom.xml`{{execute}}
 
-Copy the build artifact to the home directory
+5) Copy the build artifact to the tomcat webapps directory
 
 `cp samples-is/sso-samples/oidc-sso-sample/pickup-dispatch/target/pickup-dispatch.war apache-tomcat-8.5.75/webapps/`{{execute}}
