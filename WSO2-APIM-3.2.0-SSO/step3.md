@@ -16,19 +16,19 @@ Use the Client_ID and Secret from the DevPortal and replace the file content.
 consumerKey=<Client_ID>
 consumerSecret=<Client_Secret>
 
-callBackUrl=https://2886795276-8080-simba11.environments.katacoda.com/pickup-dispatch/oauth2client
+callBackUrl=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/pickup-dispatch/oauth2client
 scope=openid internal_application_mgt_view
 authzGrantType=code
 
 enableOIDCSessionManagement=false
 enableOIDCBackchannelLogout=true
-authzEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oauth2/authorize
-OIDC_LOGOUT_ENDPOINT=https://2886795276-9443-simba11.environments.katacoda.com/oidc/logout
-sessionIFrameEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oidc/checksession
-tokenEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oauth2/token
-claimManagementEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/services/ClaimMetadataManagementService
+authzEndpoint=https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/oauth2/authorize
+OIDC_LOGOUT_ENDPOINT=https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/oidc/logout
+sessionIFrameEndpoint=https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/oidc/checksession
+tokenEndpoint=https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/oauth2/token
+claimManagementEndpoint=https://[[HOST_SUBDOMAIN]]-9443-[[KATACODA_HOST]].environments.katacoda.com/services/ClaimMetadataManagementService
 
-post_logout_redirect_uri=http://2886795276-8080-simba11.environments.katacoda.com/pickup-dispatch/oauth2client
+post_logout_redirect_uri=http://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/pickup-dispatch/oauth2client
 api_endpoint=http://localhost:39090/bookings
 
 adminUsername=admin
