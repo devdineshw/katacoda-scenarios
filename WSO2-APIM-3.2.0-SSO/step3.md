@@ -1,27 +1,44 @@
-Copy the jar file to APIM
+1) Checkout the WSO2 IAM Samples directory
 
-`cp org.wso2.carbon.test-1.0-SNAPSHOT.jar wso2am-3.2.0/repository/components/lib/org.wso2.carbon.test-1.0-SNAPSHOT.jar`{{execute}}
+`git clone https://github.com/wso2/samples-is.git`{{execute}}
 
+2) copy the pom file (this is only in the katacode environment)
 
-Update the velocity template file (in the publisher profile if it is distributed setup)
+`cp pom.xml samples-is/`{{execute}}
 
-`vi wso2am-3.2.0/repository/resources/api_templates/velocity_template.xml`{{execute}}
+3) Open the properties file of the dispatch webapp to configure the details
 
-Add the following section
+`vi samples-is/sso-samples/oidc-sso-sample/pickup-dispatch/src/main/resources/dispatch.properties`{{execute}}
+
+Use the Client_ID and Secret from the DevPortal and replace the file content. 
+
 ```
-<handler class="org.wso2.carbon.test.CustomHandler" />
+consumerKey=<Client_ID>
+consumerSecret=<Client_Secret>
+
+callBackUrl=https://2886795276-8080-simba11.environments.katacoda.com/pickup-dispatch/oauth2client
+scope=openid internal_application_mgt_view
+authzGrantType=code
+
+enableOIDCSessionManagement=false
+enableOIDCBackchannelLogout=true
+authzEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oauth2/authorize
+OIDC_LOGOUT_ENDPOINT=https://2886795276-9443-simba11.environments.katacoda.com/oidc/logout
+sessionIFrameEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oidc/checksession
+tokenEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/oauth2/token
+claimManagementEndpoint=https://2886795276-9443-simba11.environments.katacoda.com/services/ClaimMetadataManagementService
+
+post_logout_redirect_uri=http://2886795276-8080-simba11.environments.katacoda.com/pickup-dispatch/oauth2client
+api_endpoint=http://localhost:39090/bookings
+
+adminUsername=admin
+adminPassword=admin
 ```
 
-Check the following documentation for more details
+Save the file an build the sample project
 
-https://apim.docs.wso2.com/en/3.1.0/develop/extending-api-manager/extending-gateway/writing-custom-handlers/#engaging-the-custom-handler
+`mvn clean install -f samples-is/pom.xml`{{execute}}
 
-Start the service
+Copy the build artifact to the home directory
 
-`sh wso2am-3.2.0/bin/wso2server.sh start`{{execute}}
-
-Check the logs
-
-`tail -f wso2am-3.2.0/repository/logs/wso2carbon.log`{{execute}}
-
-Wait till the server starts
+`cp samples-is/sso-samples/oidc-sso-sample/pickup-dispatch/target/pickup-dispatch.war apache-tomcat-8.5.75/webapps/`{{execute}}
