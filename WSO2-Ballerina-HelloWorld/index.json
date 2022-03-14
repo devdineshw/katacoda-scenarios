@@ -1,0 +1,31 @@
+{
+  "title": "WSO2 Ballerina Hello world",
+  "description": "WSO2 Ballerina Hello world",
+  "difficulty": "beginner",
+  "time": "1 hour",
+  "details": {
+    "steps": [
+      {
+        "title": "Install the Ballerina",
+        "text": "step1.md",
+        "courseData": "install-vsc-plugin.sh",
+        "code": "wait.sh",
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+	}
+  },
+  "environment": {
+    "hideintro": true,
+    "uilayout": "terminal",
+    "uieditorpath": "/root/example",
+    "showide": true,
+    "ide": "ssh host01 '/opt/start-vscode.sh /root/example'"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}

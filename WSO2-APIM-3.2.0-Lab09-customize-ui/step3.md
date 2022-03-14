@@ -47,7 +47,7 @@ const Configurations = {
                     },
                     {
                         tag: 'Schedule',
-                        title: 'Checkout our Schdule APIs',
+                        title: 'Checkout our Schedule APIs',
                         description:
                             '',
                         maxCount: 5,
