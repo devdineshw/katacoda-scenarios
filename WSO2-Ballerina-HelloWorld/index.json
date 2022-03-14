@@ -9,7 +9,7 @@
         "title": "Install the Ballerina",
         "text": "step1.md",
         "courseData": "install-vsc-plugin.sh",
-        "code": "wait.sh",
+        "code": "wait.sh"
       }
     ],
     "finish": {
