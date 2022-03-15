@@ -6,7 +6,7 @@ Create a ballerina project
 
 `bal new greeter`{{execute}}
 
-Switch to the VS Code view and Update main.bal with followwing content
+Switch to the IDE view and replace the main.bal content with following code
 
 ```
 import ballerina/http;
@@ -24,8 +24,6 @@ service / on httpListener {
 }
 ```
 {{copy}}
-
-
 
 Switch to a terminal window and start the service
 
