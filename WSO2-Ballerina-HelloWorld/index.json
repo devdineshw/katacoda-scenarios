@@ -10,6 +10,10 @@
         "text": "step1.md",
         "courseData": "install-vsc-plugin.sh",
         "code": "wait.sh"
+      },
+      {
+        "title": "Create a ballerina service",
+        "text": "step2.md",
       }
     ],
     "finish": {
