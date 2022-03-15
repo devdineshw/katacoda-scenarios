@@ -7,9 +7,7 @@
     "steps": [
       {
         "title": "Install the Ballerina",
-        "text": "step1.md",
-        "courseData": "install-vsc-plugin.sh",
-        "code": "wait.sh"
+        "text": "step1.md"
       },
       {
         "title": "Create a ballerina service",
