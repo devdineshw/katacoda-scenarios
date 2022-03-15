@@ -1,9 +1,25 @@
-1) Download the apache tomcat server and extract it
+Go to the workspace
 
-`wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.75/bin/apache-tomcat-8.5.75.zip`{{execute}}
+`cd vscode-workspace`{{execute}}
 
-`unzip apache-tomcat-8.5.75.zip`{{execute}}
+Create a ballerina project
 
-2) Start the tomcat service
+`bal new greeter`{{execute}}
 
-`sh apache-tomcat-8.5.75/bin/catalina.sh start`{{execute}}
+Switch to the VS Code view and Update main.bal with followwing content
+
+```
+import ballerina/http;
+
+listener http:Listener httpListener = new (8080);
+
+service / on httpListener {
+    resource function get greeting() returns string { 
+        return "Hello, World!"; 
+    }
+
+    resource function get greeting/[string name]() returns string { 
+        return "Hello " + name; 
+    }
+}
+```{{copy}}
