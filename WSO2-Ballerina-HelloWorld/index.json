@@ -21,9 +21,9 @@
   "environment": {
     "hideintro": true,
     "uilayout": "terminal",
-    "uieditorpath": "/root/example",
+    "uieditorpath": "/root/vscode-workspace",
     "showide": true,
-    "ide": "ssh host01 '/opt/start-vscode.sh /root/example'"
+    "ide": "ssh host01 '/opt/start-vscode.sh /root/vscode-workspace'"
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
