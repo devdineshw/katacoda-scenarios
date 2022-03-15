@@ -28,7 +28,7 @@
   },
   "environment": {
     "hideintro": true,
-    "uilayout": "terminalterminal",
+    "uilayout": "terminal",
     "uieditorpath": "/root/vscode-workspace",
     "showide": true,
     "ide": "ssh host01 '/opt/start-vscode.sh /root/vscode-workspace'"
