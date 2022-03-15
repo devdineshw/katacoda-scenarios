@@ -22,8 +22,7 @@ service / on httpListener {
         return "Hello " + name; 
     }
 }
-```
-{{copy}}
+```{{copy}}
 
 Switch to a terminal window and start the service
 
